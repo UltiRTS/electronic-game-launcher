@@ -1,0 +1,181 @@
+.spinningIcon{
+	
+	animation-fill-mode: forwards;
+	animation-name: spinningIconAni;
+	animation-duration: 6s;
+	animation-iteration-count: infinite;
+	animation-delay:1s;
+}
+
+@keyframes spinningIconAni {
+	
+	0%   {transform: rotate(0deg); }
+	85%   {transform: rotate(360deg); }
+
+	100%   {transform: rotate(360deg); }
+}
+
+
+
+
+ 
+ @keyframes flash {
+
+	 0%   {background-color: rgba(255,255,255,0.7);}
+	 25%  {background-color: rgba(255,255,255,0.7);}
+	 50%  {background-color: rgba(255,255,255,0.7);}
+	 51% {background-color: rgba(255,255,255,0);}
+	 75%  {background-color: rgba(255,255,255,0);}
+	 100% {background-color: rgba(255,255,255,0);}
+ }
+ 
+ 
+ 
+ /* The element to apply the animation to */
+ .warning {
+	
+
+	 animation-name: flash;
+	 animation-duration: 1.7s;
+	 animation-iteration-count: infinite;
+ }
+
+ 
+ .tagAnime{
+     color:white;
+     background:black;
+    animation-name: tagAnimation;
+	 animation-duration: 3s;
+	 animation-iteration-count: 1;
+     
+}
+
+ @keyframes tagAnimation {
+
+	 0%   {background-color: black;color:white;}
+	 70%  {background-color: black;color:red}
+	 100%  {background-color: black;color:red}
+
+ }
+ 
+  .tagAnime2{
+     color:white;
+     background:rgba(0,0,0,1);
+    animation-name: tagAnimation2;
+	 animation-duration: 1.7s;
+	 animation-iteration-count: 1;
+     
+}
+
+ @keyframes tagAnimation2 {
+    0%   {background:rgba(0,0,0,0);color:red;}
+	 10%   {background:rgba(0,0,0,0);color:red;}
+	 11%   {background:rgba(0,0,0,1);color:red;}
+	 20%   {background:rgba(0,0,0,1);color:red;}
+	 21%   {background:rgba(0,0,0,0);color:red;}
+	 30%   {background:rgba(0,0,0,0);color:red;}
+	31%   {background-color: red;color:red;}
+	
+	 100% {background-color: black;color:white;}
+ }
+ 
+ 
+ @keyframes slideIn {
+	 
+	 0%   {opacity:0;left:40%;}
+	 
+	 100% {opacity:1;left:50%;}
+ }
+ 
+ 
+ 
+ /* The element to apply the animation to */
+ .hint {
+	 
+	 
+	 animation-name: slideIn;
+	 animation-duration: 0.7s;
+	 animation-iteration-count: 1;
+ }
+ 
+ 
+ @keyframes cursorFlash {
+	 
+	 0%   {opacity:0;}
+	
+	 50%  {opacity:0;}
+	 51% {opacity:1;}
+	 
+	 100% {opacity:1;}
+ }
+ 
+ 
+ 
+ /* The element to apply the animation to */
+ .haltCursor {
+	 
+	 
+	 animation-name: cursorFlash;
+	 animation-duration: 0.2s;
+	 animation-iteration-count: infinite;
+ }
+ 
+ 
+  @keyframes normalCur {
+	 
+	 0%   {opacity:0;}
+	
+	 50%  {opacity:0;}
+	 51% {opacity:1;}
+	 
+	 100% {opacity:1;}
+ }
+ 
+ 
+ 
+ /* The element to apply the animation to */
+ .normalCursor {
+	 
+	 
+	 animation-name: normalCur;
+	 animation-duration: 8s;
+	 animation-iteration-count: infinite;
+ }
+ 
+ 
+ @keyframes maskMove {
+	 
+	 0%   {left:90%;width:10%;width:10%;}
+	 
+	 50%  {width:50%;left:50%;}
+	 
+	 
+	 100% {width:2%;left:45%;}
+ }
+ 
+ 
+ 
+ /* The element to apply the animation to */
+ .mask {
+	 
+	 
+	 animation-name: maskMove;
+	 animation-duration: 0.7s;
+	 animation-iteration-count: 1;
+ }
+ .clearCache{
+	 background:black;
+	 color:white;
+	 padding:0.25%;
+	 bottom:1%;
+	 left:1%;
+	 font-family: terminal;
+ }
+ 
+ .clearCache:hover{
+	 background:white;
+	 color:black;
+	 font-family: terminal;
+}
+ 
+ 

@@ -1,0 +1,9 @@
+window.isLinux # bool, is linux
+
+archives_checksum[row.zip_name][0]=row.extract_path    #this is pulled from the server
+archives_checksum[row.zip_name][1]=row.zip_hash   #this is pulled from the server
+
+localArchives_checksum[zipName][0]=hash
+localArchives_checksum[zipName][1]=false    #if false means no redl, true means this archive needs redl
+
+window.mapIndex[mapName]=mapFileName

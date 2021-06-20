@@ -1,0 +1,45 @@
+{
+  "name": "ulti-launcher",
+  "version": "0.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "jest",
+    "pack": "electron-builder --dir",
+    "build": "electron-builder -wl --x64 --publish never"
+  },
+  "devDependencies": {
+    "electron": "^12.0.1",
+    "electron-builder": "^22.9.1",
+    "jest": "^26.2.2"
+  },
+  "dependencies": {
+    "decompress-zip": "^0.3.3",
+    "electron-root-path": "^1.0.16",
+    "electron-store": "^6.0.1",
+    "extract-zip": "^1.7.0",
+    "fs": "0.0.1-security",
+    "fs-force-delete": "^1.1.1",
+    "md5-file": "^5.0.0",
+    "messenger": "^0.0.9",
+    "shelljs": "^0.8.4",
+    "sqlite3": "^5.0.2",
+    "su-downloader3-enhance": "^1.2.1"
+  },
+  "build": {
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "asar": true,
+    "asarUnpack": [
+      "assets"
+      
+    ]},
+      
+    "portable": {
+      "artifactName": "launcher.exe"
+    }
+  
+}
+}
