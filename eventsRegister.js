@@ -41,6 +41,11 @@ eventEmitter.on('failedCheckDifference', () => {
 	
 })
 
+eventEmitter.on('sourceIntact', () => {
+    console.log('check for individual files')
+	checkIndiMd5()
+	
+})
 
 
 eventEmitter.on('downloadedDifferentArchives', () => {
