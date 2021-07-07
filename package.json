@@ -23,6 +23,7 @@
     "fs-force-delete": "^1.1.1",
     "md5-file": "^5.0.0",
     "messenger": "^0.0.9",
+    "network-speed": "^2.1.1",
     "shelljs": "^0.8.4",
     "sqlite3": "^5.0.2",
     "su-downloader3-enhance": "^1.2.1"

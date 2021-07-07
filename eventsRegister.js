@@ -3,7 +3,11 @@
 const EventEmitter = require('events')
 const eventEmitter = new EventEmitter()
 
-
+eventEmitter.on('gotSpeed', () => {
+    console.log('got speed')
+	getOSVer();
+	
+})
 eventEmitter.on('gotOSVer', () => {
     console.log('got OSVER')
 	getPath();
