@@ -48,8 +48,8 @@ eventEmitter.on('sourceIntact', () => {
 })
 
 
-eventEmitter.on('downloadedDifferentArchives', () => {
-    console.log('partial defferentiate')
+eventEmitter.on('indiMD5Unmatching', () => {
+    console.log('indiMD5Unmatching')
 	deletePathes();
 	
 })
