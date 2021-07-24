@@ -5,70 +5,91 @@ const eventEmitter = new EventEmitter()
 
 eventEmitter.on('gotSpeed', () => {
     console.log('got speed')
-	getOSVer();
+	try{
+	getOSVer();}
+	catch{kernelPanic()}
 	
 })
 eventEmitter.on('gotOSVer', () => {
     console.log('got OSVER')
-	getPath();
+	try{getPath();}
+	catch{kernelPanic()}
 	
 })
 
 eventEmitter.on('gotPath', () => {
     console.log('got path')
-	getDB();
+	try{getDB();}
+	catch{kernelPanic()}
 	
 })
 
 eventEmitter.on('gotDB', () => {
     console.log('got db')
+	try{
 	getRemoteArchiveCheckSum();
-    getMapAssociation();
+    getMapAssociation();}
+	catch{kernelPanic()}
 	
 })
 
 eventEmitter.on('gotRemoteArchiveCheckSum', () => {
     console.log('got rCsum')
-	getLocalArchiveCheckSum();
+	try{
+	getLocalArchiveCheckSum();}
+	catch{kernelPanic()}
 	
 })
 
 eventEmitter.on('gotLocalArchiveCheckSum', () => {
     console.log('got lCsum')
+	try{
 	checkForDifference()
+	}
+	catch{kernelPanic()}
 	
 })
 
 eventEmitter.on('failedCheckDifference', () => {
     console.log('differential failure')
-	downloadDifferentArchives()
+	try{
+	downloadDifferentArchives()}
+	catch{kernelPanic()}
 	
 })
 
 eventEmitter.on('sourceIntact', () => {
     console.log('check for individual files')
-	checkIndiMd5()
+	try{
+	checkIndiMd5()}
+	catch{kernelPanic()}
 	
 })
 
 
 eventEmitter.on('indiMD5Unmatching', () => {
     console.log('indiMD5Unmatching')
-	deletePathes();
+	try{
+	deletePathes();}
+	catch{kernelPanic()}
 	
 })
 
 eventEmitter.on('deletedPathes', () => {
 	console.log('de path')
-	extractFile()
+	try{
+	extractFile()}
+	catch{kernelPanic()}
 	
 	
 })
 
 
-eventEmitter.on('extractedLocalArchives', () => {
+eventEmitter.on('payloadIntact', () => {
     console.log('launching')
-	launch();
+	try{
+	launch();}
+	catch{kernelPanic()}
 	
 })
 

@@ -38,7 +38,8 @@ background-position: left;
 
 </head>
 <body style="overflow:hidden;">
-<div onclick="clearCache()" class="clearCache" id="clearCache" style="position:fixed;z-index:102;">Clear Cache</div>
+<div onclick="clearCache()" class="optBtn" id="clearCache" style="font-size:1vw;bottom:1%; left:1%;position:fixed;z-index:102;">Clear Cache</div>
+<div onclick="openDbug()" class="optBtn" id="openDbug" style="font-size:1vw;bottom:1%; left:10%;position:fixed;z-index:102;">debug</div>
 <div class="heading">
 	<span style="font-size:6vw;">Thea</span><span style="font-family:title;font-size:1vw;">™</span> <span style="font-size:3vw;"><br>Pharmaceuticals </span>
 </div>
@@ -50,43 +51,57 @@ The leading edge <br>custom plasmid <br>and <br>reagent supplier in <br>Oncogene
     <i>© Thea Pharmaceuticals,Inc. A registered R&amp;D company, <br>all rights reserved.</i></span>
 </div>
 
-<div id="bars" style="position:fixed; right:-3%;width:30%;font-family:title;z-index:1;"> 
+<div class="bars normalOperation" id='bars' style="mix-blend-mode:screen;position:fixed;right:-3%;width:30%;font-family:title;height:100%;z-index:1;"> 
 
 
-	<span id="download" style="position: fixed; color: rgb(255, 255, 255); top: 3%; font-size: 8vh; background: rgb(0, 0, 0); left: 73%;">DOWNLOAD</span>
-	<div id="downloadbar" style="position:fixed; top:15.5%; text-shadow: 0px 0px 4px black; padding:0px;font-weight:900;font-size:0.5vh;">▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</div>
+	<span id="download" style="filter: drop-shadow(10px 10px 4px #2196f3);position: fixed; color: rgba(0, 0, 0); top: 3%; font-size: 8vh; background: rgba(255,255,255,0.5); left: 73%;">DOWNLOAD</span>
+	<div id="downloadbar" style="color:white;position:fixed; top:15.5%; box-shadow: 0px 0px 8px white; padding:0px;font-weight:900;font-size:0.5vh;">▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</div>
     
-    <span id="upload" style="position:fixed;color:rgb(255, 255, 255);top:18%; font-size:8vh;background:rgb(0,0,0);left: 73%;">UPLOAD</span>
-    <div id="uploadbar" style="position:fixed;top:30.5%;text-shadow: 0px 0px 4px black; padding:0px;font-weight:900;font-size:0.5vh;">▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</div>
+    <span id="upload" style="filter: drop-shadow(10px 10px 4px #2196f3);position:fixed;color:rgb(0, 0, 0);top:18%; font-size:8vh;background:rgba(255,255,255,0.5);left: 73%;">UPLOAD</span>
+    <div id="uploadbar" style="color:white;position:fixed;top:30.5%;box-shadow: 0px 0px 8px white; padding:0px;font-weight:900;font-size:0.5vh;">▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</div>
     
-    <span id="analyze" style="position:fixed;color:white;  top:33%;font-size:8vh;background:rgba(0,0,0,1);left: 73%;">ANALYZE</span>
-    <div id="analyzebar" style="position:fixed;top:45.5%;text-shadow: 0px 0px 4px black; padding:0px;font-weight:900;font-size:0.5vh;">▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</div>
-    <span id="init" style="position:fixed;top:50%;color:white;  font-size:3vw;">SysV <span class="normalCursor" id="cursor" style="visibility: visible;">_</span><br></span>
+    <span id="analyze" style="filter: drop-shadow(10px 10px 4px #2196f3);position:fixed;color:black;  top:33%;font-size:8vh;background:rgba(255,255,255,0.5);left: 73%;">ANALYZE</span>
+    <div id="analyzebar" style="color:white;position:fixed;top:45.5%;box-shadow: 0px 0px 8px white; padding:0px;font-weight:900;font-size:0.5vh;">▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀</div>
+    <span id="init" style="width:200vw;position:absolute;top:25vw;background:rgba(255,255,255,0.4);font-size:10vw;color:rgba(0,0,0,0.2);mix-blend-mode: screen;font-weight:900;white-space: nowrap;height: 7vw;">
+    <p style="position:absolute;top: -204%;left: 3%;">SysV</p> 
+    <br></span>
     
     
-    <img src="assets/rotat.png" class="spinningIcon" style="top:25vw;position:absolute;width:3.6vw;"><span style="color:white;font-weight:800;top:24.9vw;left:0.9vw;position:absolute;font-size:2.5vw;">A</span>
-    <span style="position:absolute;top:25vw;left:4vw;color:white">Autopilot Functioning Normally</span>
+    <img src="assets/rotat.png" class="spinningIcon" id='spinningIcon' style="top:25vw;position:absolute;width:3.6vw;"><span style="color:white;font-weight:800;top:24.9vw;left:0.9vw;position:absolute;font-size:2.5vw;">A</span>
+    <span id='autopilotStatus' style="position:absolute;top:25vw;left:4vw;color:white">Autopilot Functioning Normally <span class="normalCursor" id="cursor" style="visibility: visible;">_</span>
+    </span>
     <div style="width:10vw;height:1.4vw;position:absolute;top:27vw;left:4vw;background:rgba(255,255,255,0.7);color:black;"> <span id="totalProgress" style="font-size:1vw;mix-blend-mode:screen;color:black;position:absolute;">22.22%</span></div>
 </div>
 
 <div id="longMsg" style="position:fixed; bottom:13.5%; overflow:hidden; height:10%; width:50%;right:5%;font-family:terminal; text-shadow: 0px 0px 0px black;color:grey;font-size:1.5vh;"><div id="longMsgTxt" style="position: relative; top: -3388.5px;"></div></div>
 
 <div id="msgOutline" style="position:fixed; bottom:10%; overflow:hidden; height:40%; width:30%;right:3%;font-family:terminal; text-shadow: 0px 0px 0px black;color:black;font-size:1.5vh;display: flex;flex-direction: column-reverse;"></div>
-<div id="blocker" style="background:rgba(100,0,0,0.8);position:fixed;height:200%;width:200%;top:-50%;left:-50%;z-index:99;visibility:hidden;">
-	<div style="width:30vw;position:fixed;top:20%;left:2%;font-size:3rem;padding:2%;overflow:visible;">
-	<div class="warning" id="wd" onclick="getPathUsingDialog();this.onclick=''" style="width:20vw;background:rgba(255,255,255,1);position:fixed;top:20%;left:2%;font-size:3rem;padding:2%;overflow:visible;">
-		<center style="font-family: terminal; padding:5%;font-weight:900;">Install</center>
+<div id="blocker" style="visibility:hidden;background: rgba(100, 0, 0, 0.8);position: fixed;height: 120%;width: 120%;top: -20%;left: -20%;z-index: 99;backdrop-filter: blur(11px);mix-blend-mode:screen;">
+	
+	<div class="" id="wd" onclick="getPathUsingDialog();this.onclick=''" style="width:20vw;background:rgba(255,255,255,1);position:fixed;top: 44%;left: 22%;font-size:3rem;padding:2%;overflow:visible;padding-bottom:1px;padding-left:1px">
+		Install
 				
 	</div>
-	</div>
-	<p class="hint" id="hint" style="position:fixed; top:20%;left:50%;color:rgba(255,255,255,0.8);font-family:title;">「INIT」 init.rc: Click INSTALL to install the Ultimatum NeuralLink Software<br>
-	「INIT」 init.rc: By pressing the flashing button, please browse up the folder <br>
-	you want to install the software in<br>&nbsp&nbsp(INITRAMFS) halted<span class="haltCursor"> _</span></p>
-	<div class="mask" style="background:rgba(255,255,255,0.4);position:fixed;top:20%;width:0.2%;left:45%;height:50%;"></div>
+	
+	<div class="" id="hint" style="position:fixed;top: 41%;left:50%;color:rgba(255,255,255,1);font-family:title;">
+	
+	「INIT」 init.rc: <span style="color:black;background:rgba(255,255,255,0.8);padding-left:4px;padding-right:4px;">Event ID</span>: ***&nbsp &nbsp&nbsp <span style="color:black;background:rgba(255,255,255,0.8);padding-left:4px;padding-right:4px;">NeuralLink Status</span>: Quenching...<br>
+	「INIT」 init.rc: Click <span style="color:black;background:rgba(255,255,255,0.8);padding-left:4px;padding-right:4px;">INSTALL</span> to install the Ultimatum NeuralLink Software<br>
+	「INIT」 init.rc: By pressing the flashing button, please browse up the folder you want to install the software in.</br>
+	「INIT」 init.rc: After which you will be able to <span style="color:black;background:rgba(255,255,255,0.8);padding-left:4px;padding-right:4px;">use this installer</span> to launch the game.</br>
+	「INIT」 init.rc: Halted.</br>
+	<br>&nbsp;&nbsp;(INITRAMFS)~#<span class="haltCursor"> _</span></div>
+	<div class="" id="mask" style="background:rgba(255,255,255,0.4);position:fixed;top: 35%;width:0.2%;left:45%;height:50%;"></div>
 	
 </div>
+
+
+
 <canvas style="position:absolute;height:0%;width:0%;"></canvas>
 <script src="lib/speedTest.js"></script>
+<script src="lib/bugEmitter.js"></script>
+
+<script src="lib/debug.js"></script>
 
 <script src="lib/downloader.js"></script>
 <script src="lib/logPusher.js"></script>
@@ -99,12 +114,6 @@ The leading edge <br>custom plasmid <br>and <br>reagent supplier in <br>Oncogene
 <script>downloadFile('http://23.83.237.166/dNTPDl/500000','./500000',function (){testSpeed()})</script>
 <script src="lib/communicator.js"></script>
 <script src="lib/soundPlayer.js"></script>
-
-
-
-
-
-
 
 
 

@@ -163,19 +163,24 @@
 	 animation-duration: 0.7s;
 	 animation-iteration-count: 1;
  }
- .clearCache{
+ .optBtn{
 	 background:black;
 	 color:white;
 	 padding:0.25%;
-	 bottom:1%;
-	 left:1%;
+	 
 	 font-family: terminal;
  }
  
- .clearCache:hover{
+ .optBtn:hover{
 	 background:white;
 	 color:black;
 	 font-family: terminal;
 }
  
- 
+.normalOperation{
+	background:rgba(0,0,0,0.2);
+}
+
+.abnormalOperation{
+	background:rgba(255,0,0,1);
+}
