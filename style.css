@@ -15,6 +15,13 @@
 	100%   {transform: rotate(360deg); }
 }
 
+.mainMenuSubItem{
+	background: rgba(255,255,255,0.5);
+}
+
+.mainMenuSubItem:hover{
+	background: rgba(100,100,100,0.5);
+}
 
 
 

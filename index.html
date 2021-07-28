@@ -38,8 +38,44 @@ background-position: left;
 
 </head>
 <body style="overflow:hidden;">
-<div onclick="clearCache()" class="optBtn" id="clearCache" style="font-size:1vw;bottom:1%; left:1%;position:fixed;z-index:102;">Clear Cache</div>
-<div onclick="openDbug()" class="optBtn" id="openDbug" style="font-size:1vw;bottom:1%; left:10%;position:fixed;z-index:102;">debug</div>
+
+
+
+		<div class="mainMenu" id="mainMenu"
+			style="position:absolute;backdrop-filter: blur(7.2px);z-index: 1;left: -7vw;bottom: 17px;width: 39vw;height: 20px;transform:skew(0.32rad);background:rgba(100,100,100,0.4);mix-blend-mode: screen;">
+
+			<div class="mainMenuSubItem" onclick="clearCache();"
+				style="pointer-events:initial; left:0;height:20px;width:15vw;position:absolute;filter: drop-shadow(10px 10px 2px rgba(97, 185, 255,0.4));">
+				<p style="margin:0;transform:skew(-0.312rad);color:black;right:5px;font-size:15px;position:absolute;">
+					Clear Cache</p>
+			</div>
+
+			<div class="mainMenuSubItem" onclick="openDbug();"
+				style="pointer-events:initial; left:16vw;height:20px;width:10vw;position:absolute;filter: drop-shadow(10px 10px 2px rgba(97, 185, 255,0.4));">
+				<p style="margin:0;transform:skew(-0.312rad);color:black;right:5px;font-size:15px;position:absolute;">
+					debug</p>
+			</div>
+
+			<div class="mainMenuSubItem" onclick="toggleMusic();"
+				style="pointer-events:initial; top:0;left:27vw;height:20px;width:10vw;position:absolute;filter: drop-shadow(10px 10px 2px rgba(97, 185, 255,0.4));">
+				<p style="margin:0;transform:skew(-0.312rad);color:black;right:5px;font-size:15px;position:absolute;">
+					toggle music</p>
+			</div>
+
+
+
+		</div>
+
+
+
+
+
+
+
+
+
+
+
 <div class="heading">
 	<span style="font-size:6vw;">Thea</span><span style="font-family:title;font-size:1vw;">™</span> <span style="font-size:3vw;"><br>Pharmaceuticals </span>
 </div>
@@ -78,7 +114,7 @@ The leading edge <br>custom plasmid <br>and <br>reagent supplier in <br>Oncogene
 <div id="msgOutline" style="position:fixed; bottom:10%; overflow:hidden; height:40%; width:30%;right:3%;font-family:terminal; text-shadow: 0px 0px 0px black;color:black;font-size:1.5vh;display: flex;flex-direction: column-reverse;"></div>
 <div id="blocker" style="visibility:hidden;background: rgba(100, 0, 0, 0.8);position: fixed;height: 120%;width: 120%;top: -20%;left: -20%;z-index: 99;backdrop-filter: blur(11px);mix-blend-mode:screen;">
 	
-	<div class="" id="wd" onclick="getPathUsingDialog();this.onclick=''" style="width:20vw;background:rgba(255,255,255,1);position:fixed;top: 44%;left: 22%;font-size:3rem;padding:2%;overflow:visible;padding-bottom:1px;padding-left:1px">
+	<div class="" id="wd" onclick="getPathUsingDialog();" style="width:20vw;background:rgba(255,255,255,1);position:fixed;top: 44%;left: 22%;font-size:3rem;padding:2%;overflow:visible;padding-bottom:1px;padding-left:1px">
 		Install
 				
 	</div>

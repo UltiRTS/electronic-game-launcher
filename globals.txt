@@ -7,3 +7,5 @@ localArchives_checksum[zipName][0]=hash
 localArchives_checksum[zipName][1]=false    #if false means no redl, true means this archive needs redl
 safedir
 window.mapIndex[mapName]=mapFileName
+window.dlSpeed #download speed
+window.eta
