@@ -134,7 +134,8 @@ The leading edge <br>custom plasmid <br>and <br>reagent supplier in <br>Oncogene
 
 
 <canvas style="position:absolute;height:0%;width:0%;"></canvas>
-<script src="lib/speedTest.js"></script>
+
+
 <script src="lib/bugEmitter.js"></script>
 
 <script src="lib/debug.js"></script>
@@ -147,11 +148,26 @@ The leading edge <br>custom plasmid <br>and <br>reagent supplier in <br>Oncogene
 <script src="lib/eventsExe.js"></script>
 
 <script src="eventsRegister.js"></script>
-<script>downloadFile('http://23.83.237.166/dNTPDl/500000','./500000',function (){testSpeed()})</script>
 <script src="lib/communicator.js"></script>
 <script src="lib/soundPlayer.js"></script>
 
+<script>
+	const ipcRenderer = require('electron').ipcRenderer;
+	ipcRenderer.on('gotInstallPath', (event, arg) => {
+			if(arg.filePaths.length!=0){
+				window.wd = arg.filePaths;
+				store.set('window.wd', window.wd);
+				eventEmitter.emit('gotPath');
+				bugExterminate()
+				//ipcRenderer.on('gotInstallPath', (event, arg) => {console.log('Unsure why this is firing multiple times')})
+			}
+			else{
+				document.getElementById('blocker').style.visibility='visible';return;
+			}
+		  })
 
+	testSpeed()
+</script>
 
 
 

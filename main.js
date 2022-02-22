@@ -1,4 +1,5 @@
 const { app, BrowserWindow } = require("electron");
+const {ipcMain, dialog} = require('electron');
 
 let mainWindow;
 
@@ -16,7 +17,7 @@ function createWindow() {
 	//mainWindow.maximize();
 	mainWindow.setMenu(null)
 	mainWindow.loadFile("index.html");
-	//mainWindow.webContents.openDevTools();
+	mainWindow.webContents.openDevTools();
 
 	mainWindow.on("closed", function () {
 		mainWindow = null;
@@ -31,3 +32,27 @@ function createWindow() {
 
 
 app.on("ready", createWindow);
+/*
+ipcMain.on('main', (cmd) => {
+	switch (cmd) {
+	  case 'getInstallPath':
+		console.log('requesting path')
+		
+		break;
+
+	  case 'toggleDevTools':
+		mainWindow.webContents.toggleDevTools();
+		break;
+	}
+  });*/
+
+  ipcMain.on('getInstallPath', (event, arg) => {
+	var path = dialog.showOpenDialog({
+		properties: ['openDirectory']
+	}).then( value => {
+		console.log("seleted: ", value.filePaths);
+		event.sender.send('gotInstallPath', value);//for eg : adds x and y
+	})
+
+	
+  })
