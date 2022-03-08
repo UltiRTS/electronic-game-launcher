@@ -1,6 +1,11 @@
 const { app, BrowserWindow } = require("electron");
 const {ipcMain, dialog} = require('electron');
 
+
+// in the main process:
+const {initialize, enable} = require('@electron/remote/main');
+initialize();
+
 let mainWindow;
 
 function createWindow() {
@@ -22,6 +27,8 @@ function createWindow() {
 	mainWindow.on("closed", function () {
 		mainWindow = null;
 	});
+
+	enable(mainWindow.webContents);
 }
 
 
